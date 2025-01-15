@@ -61,4 +61,6 @@ echo 'Access Token: ' . $_SESSION['facebook_access_token'];
 // You can now access these session variables in other parts of your application
 echo 'ID: ' . $_SESSION['page_id'] . '<br>';
 echo 'Access Token: ' . $_SESSION['access_token'];
+header("Location: ../web/post_photo_form.html");
+die;
 ?>

@@ -29,6 +29,8 @@
                 <h5>Sidebar</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="post_photo_form.html">Post Photo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="post_video_form.html">Post Video</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>

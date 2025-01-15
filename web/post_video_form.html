@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post video to Facebook</title>
+</head>
+<body>
+    <h1>Post a video to Facebook</h1>
+    <form action="post_video.php" method="POST" enctype="multipart/form-data">
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="video">Select video:</label><br>
+        <input type="file" id="video" name="video" accept="video/*" required><br><br>
+
+        <input type="submit" value="Post video">
+    </form>
+</body>
+</html>
