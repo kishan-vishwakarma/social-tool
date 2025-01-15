@@ -14,26 +14,20 @@ $pageAccessToken = $_SESSION['access_token'];
 $facebookAccessToken = $_SESSION['facebook_access_token'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
     $message = $_POST['message'];
-    $video = $_FILES['video'];
-
 
     // Check if the file was uploaded without errors
-    if (isset($video) && $video['error'] == 0) {
-
-        
+    if (isset($message) && $message['error'] == 0) {
         // Read the file content
-        $filePath = $video['tmp_name'];
+        
         $data = [
             'message' => $message,
-            'source' => $fb->fileToUpload($filePath),
         ];
 
         try {
-            $response = $fb->post('/me/videos', $data, $pageAccessToken);
+            $response = $fb->post('/me/feed', $data, $pageAccessToken);
             $graphNode = $response->getGraphNode();
-            echo 'Post with Video ID: ' . $graphNode['id'];
+            echo 'Post with Text ID: ' . $graphNode['id'];
             header("Location: dashboard.php");
         } catch (Facebook\Exceptions\FacebookResponseException $e) {
             echo 'Graph returned an error: ' . $e->getMessage();
