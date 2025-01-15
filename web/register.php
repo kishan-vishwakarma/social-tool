@@ -1,15 +1,38 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once('config/db.php'); // Ensure this file contains the correct database connection
+
 // register.php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle the registration logic here
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
 
-    // Example: Insert into the database (make sure to use your actual database connection)
-    // $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+    // Validate input
+    if (empty($username) || empty($email) || empty($password)) {
+        echo "All fields are required.";
+        exit;
+    }
 
-    echo "Registration successful!";
+    // Hash the password
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    // Create the SQL query
+    $sql = "INSERT INTO register (username, email, password) VALUES ('$username', '$email', '$hashedPassword')";
+
+    // Execute the query
+    if ($conn->query($sql) === TRUE) {
+        echo "Registration successful!";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    // Close the database connection
+    $conn->close();
 }
 ?>
 
