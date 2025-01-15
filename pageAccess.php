@@ -14,9 +14,9 @@ $fb = new Facebook\Facebook([
 ]);
 
 
-// $token = Token();
+$token = Token();
 // echo $token;die;
-$token = 'EAANSuGKcp1EBO3uxV0ldZAwoqz6EPPyqeYeYXu6XmXZC6jlCyXaQjHYfZB35ZCVWVpVbckkLTruYtBgE95OhWMBZBU8NcoT7oyLaqcylEHgSXheSpje9S6gZALnWybYuqeAhZBFgWCVE1uxnmbq9ff1nAPu8pBLlLCEtvAWaxZC1NZBfJJtVLHvDc85ZBIbXuZC4s1ZBLrawuCKo';
+// $token = 'EAANSuGKcp1EBO3uxV0ldZAwoqz6EPPyqeYeYXu6XmXZC6jlCyXaQjHYfZB35ZCVWVpVbckkLTruYtBgE95OhWMBZBU8NcoT7oyLaqcylEHgSXheSpje9S6gZALnWybYuqeAhZBFgWCVE1uxnmbq9ff1nAPu8pBLlLCEtvAWaxZC1NZBfJJtVLHvDc85ZBIbXuZC4s1ZBLrawuCKo';
 
 try {
     // Define the data to send in the POST request

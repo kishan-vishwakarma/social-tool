@@ -22,6 +22,6 @@ function Token() {
         return 'Facebook SDK returned an error: ' . $e->getMessage();
     }
 }
-
+Token();
 
 ?>

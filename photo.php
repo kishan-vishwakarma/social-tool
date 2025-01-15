@@ -11,7 +11,7 @@ $fb = new Facebook\Facebook([
     'default_graph_version' => 'v21.0',
 ]);
 
-$pageAccessToken = 'EAANSuGKcp1EBO3w46u8DUx2SZA2qWhjpwLwzwq74Hqjj4ZBz9jNB14XKT7lpX0JsP1ElaqjIGmx5Oj2Mp3goHLSzqZB5ME2ruap5dAakGy1NFZABzJUZCbdUtWPmCt2wMQujqZCZBCcCVnRLjnxHZBIdqm5Q7YIdMkbNeF9cgiz5lpRRghrP90RpVWsZCYz40caOndTnFdkZCmQoArAkQXJgLaQngCIhYZBoIz9';
+$pageAccessToken = 'EAANSuGKcp1EBOzdruAq8HsoFas2ZC3mGf2UPMjnjW8dkorzQRJXM8BWZBBAzWGpGp1KP9ivWgbXZAoUvS0qbXC1QrYGuGV5z9iabMGErOWqdM52aMoWhy9VPSIGQUCw0fkCpsEkPTTMbphl6rOGygqCaBhtfZAr1WZAGiVvZACZAEVvL2kT4WihnZAewEBx7TEUzUsiQwZCUlgfKccuQOAZBZCI2IEWp9Pwbkq5';
 
 try {
     $data = [
