@@ -19,13 +19,17 @@ $fb = new Facebook\Facebook([
 $token = 'EAANSuGKcp1EBO3uxV0ldZAwoqz6EPPyqeYeYXu6XmXZC6jlCyXaQjHYfZB35ZCVWVpVbckkLTruYtBgE95OhWMBZBU8NcoT7oyLaqcylEHgSXheSpje9S6gZALnWybYuqeAhZBFgWCVE1uxnmbq9ff1nAPu8pBLlLCEtvAWaxZC1NZBfJJtVLHvDc85ZBIbXuZC4s1ZBLrawuCKo';
 
 try {
-    // Define the data to send in the POST request
-    $data = [
-        'message' => '2 Andhra Pradesh CM Chandrababu Naidu offers to facilitate Vaikunta Dwara Darshan to those injured in Tirupati stampede',
-    ];
+   
+    $response = $fb->get('/me/accounts', $token);
+    $pages = $response->getDecodedBody();
+    
+    foreach ($pages['data'] as $page) {
+        echo 'Page Name: ' . $page['name'] . '<br>';
+        echo 'Page ID: ' . $page['id'] . '<br>';
+        echo 'Access Token: ' . $page['access_token'] . '<br><br>';
+    }
+    
 
-    // Make the POST request
-    $response = $fb->post('/me/feed', $data, $token);
 } catch (Facebook\Exceptions\FacebookResponseException $e) {
     echo 'Graph returned an error: ' . $e->getMessage();
     exit;
@@ -34,7 +38,5 @@ try {
     exit;
 }
 
-$graphNode = $response->getGraphNode();
-echo 'ID: ' . $graphNode['id'];
 
 ?>

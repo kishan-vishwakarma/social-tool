@@ -1,8 +1,4 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 require_once('../vendor/autoload.php');
 
@@ -14,6 +10,8 @@ $fb = new Facebook\Facebook([
 
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email', 'pages_show_list', 'pages_manage_posts']; // Add required permissions
+
+// Redirect URL after login
 $loginUrl = $helper->getLoginUrl('https://26fe-2409-40e3-3012-4ca2-ddf1-5a3b-d151-c330.ngrok-free.app/social-tool/auth/callback.php', $permissions);
 
 echo '<a href="' . htmlspecialchars($loginUrl) . '">Log in with Facebook!</a>';
